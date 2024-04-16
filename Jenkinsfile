@@ -1,10 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage('Build')
+        stage('QRBuild')
         {
             steps{
-                echo "Build pipeline"
+                echo "QRBuild pipeline"
             }
         }
 
