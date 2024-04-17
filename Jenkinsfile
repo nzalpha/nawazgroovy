@@ -1,31 +1,16 @@
 pipeline{
     agent any
+    environment deploy_to = 'prod'
     stages{
         stage('Build')
         {
+            when{
+                environment name: 'deploy_to', value: 'other'
+            }
             steps{
-                echo "Build pipeline"
+                echo "Build Prod pipeline"
             }
         }
-
-         stage('Scans')
-        {
-            steps{
-                echo "Scanning pipeline"
-            }
-        }
-
-         stage('Docker Build')
-        {
-            steps{
-                echo "Docker build pipeline"
-            }
-        }
-         stage('Dev Deploy')
-        {
-            steps{
-                echo "Deploying Dev "
-            }
-        }
+    
     }
 }
