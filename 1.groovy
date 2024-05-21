@@ -4,6 +4,7 @@ pipeline {
         stage ('FirstStage') {
             steps {
                 echo "First Pipleline"
+                echo "test"
             }
         }
     }
